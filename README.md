@@ -8,7 +8,7 @@ Create quickly and easily a professional README.md file for new project in gibhu
 -Title, Description, Table of Content, Installation, Usage, License, Contribution, Tests, and Questiosn 
 2. Github username link to github repository then display on Github Profile in section Questions
 3. email link to section Questions
-4. generated file name : generatedREADME.md
+4. generated file name : [generatedREADME.md](./generatedREADME.md)
     
 ## Run
 
@@ -37,7 +37,7 @@ Successfully created generatedREADME.md!
 
 
 ## links
-* License badge: https://gist.github.com/artem-solovev/e1602722f84835f35daef4dfb3df5500
+* [License badge](https://gist.github.com/artem-solovev/e1602722f84835f35daef4dfb3df5500)
 
   
    
