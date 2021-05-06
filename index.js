@@ -2,7 +2,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
-const writeFileAsync = util.promisify(fs.writeFile);
 
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
@@ -47,7 +46,7 @@ const questions = [
         type: 'checkbox',
         message: 'License for your project?',
         name: 'license',
-        choices: ['MIT', 'MPL', 'GNU', 'BSL'],
+        choices: ['MIT', 'MPL'],
     },
     {
         type: 'input',
@@ -62,9 +61,9 @@ const promptUser = () => {
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, answers) {
-    fs.writeToFile(fileName, answers);
-
+    fs.writeFile(fileName, answers);
 }
+const writeFileAsync = util.promisify(writeToFile);
 
 // TODO: Create a function to initialize app
 function init () {
