@@ -12,7 +12,7 @@ Create quickly and easily a professional README.md file for new project in gibhu
     
 ## Run
 
-command line : 
+run following command: 
 
 ```
 $ node index.js
@@ -27,7 +27,7 @@ $ node index.js
 ? License for your project? 
 [ ] MIT
 [ ] MPL
-
+Successfully created generatedREADME.md!
 ```
   
 ## Portfolio

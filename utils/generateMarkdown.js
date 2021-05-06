@@ -48,14 +48,32 @@ function renderLicenseSection(license) {
 function renderTableOfContent(data){
   const dTmp = Object.keys(data);
   let str = "";
+  let strDes = "";
 
    for (let i=4;i<dTmp.length-1;i++){
-     let key = dTmp[i];
-     let tmp = key;
+     const key = dTmp[i];
+     const tmp = key;
+     const upperKey = tmp.charAt(0).toUpperCase() + tmp.slice(1);
     //  const value = data[Object.keys(data)[i]];
-     str +="* ["+tmp.charAt(0).toUpperCase() + tmp.slice(1) +"](#"+key+")  \n";
+     str +="* ["+upperKey+"](#"+key+")  \n";
+
+     //Sections
+     const value = data[Object.keys(data)[i]];
+     strDes += `
+     ## ${upperKey}
+     ${value} \n\n     
+     `;
    }
-   return str;
+
+   //Questions: add github repository and email
+   if (data.username) {
+      strDes += `
+      [Github profile](https://github.com/${data.username})\n
+      To reach me with additiona questions : ${data.email}\n     
+      `; 
+   }
+
+   return str+"\n\n"+strDes;
 }
 
 // TODO: Create a function to generate markdown for README
