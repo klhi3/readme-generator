@@ -18,36 +18,36 @@ const questions = [
         name: 'title',
         message: 'What is your project title?',
     },
-    {
-        type: 'input',
-        name: 'description',
-        message: 'Please describe your project',
-    },
-    {
-        type: 'input',
-        name: 'installation',
-        message: 'How to install?',
-    },
-    {
-        type: 'input',
-        name: 'usage',
-        message: 'Describe usage?',
-    },
-    {
-        type: 'input',
-        name: 'constribution',
-        message: 'Provide any contribution?',
-    },
-    {
-        type: 'input',
-        name: 'tests',
-        message: 'Tests',
-    },
-    {
-        type: 'input',
-        name: 'questions',
-        message: 'Questions',
-    },
+    // {
+    //     type: 'input',
+    //     name: 'description',
+    //     message: 'Please describe your project',
+    // },
+    // {
+    //     type: 'input',
+    //     name: 'installation',
+    //     message: 'How to install?',
+    // },
+    // {
+    //     type: 'input',
+    //     name: 'usage',
+    //     message: 'Describe usage?',
+    // },
+    // {
+    //     type: 'input',
+    //     name: 'constribution',
+    //     message: 'Provide any contribution?',
+    // },
+    // {
+    //     type: 'input',
+    //     name: 'tests',
+    //     message: 'Tests',
+    // },
+    // {
+    //     type: 'input',
+    //     name: 'questions',
+    //     message: 'Questions',
+    // },
     {
         type: 'checkbox',
         message: 'License for your project?',
