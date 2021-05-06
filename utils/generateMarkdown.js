@@ -59,10 +59,10 @@ function renderTableOfContent(data){
 
      //Sections
      const value = data[Object.keys(data)[i]];
-     strDes += `
-     ## ${upperKey}
-     ${value} \n\n     
-     `;
+     strDes += 
+     `## ${upperKey}
+     ${value} \n`;    
+
    }
 
    //Questions: add github repository and email
@@ -73,13 +73,13 @@ function renderTableOfContent(data){
       `; 
    }
 
-   return str+"\n\n"+strDes;
+   return [str, strDes];
 }
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
 
-  renderTableOfContent(data);
+  const s = renderTableOfContent(data);
 
   return `# ${data.title}
 ${renderLicenseSection(data.license)}
@@ -88,7 +88,9 @@ ${renderLicenseSection(data.license)}
 ${data.description}   
   
 ## Table of Content
-${renderTableOfContent(data)} 
+${s[0]} 
+
+${s[1]}
 
 
 
