@@ -4,9 +4,15 @@ const fs = require('fs');
 const util = require('util');
 
 const generateMarkdown = require('./utils/generateMarkdown.js');
+const fileName = 'generatedREADME.md';
 
 // TODO: Create an array of questions for user input
 const questions = [ 
+    {
+        type: 'input',
+        name: 'username',
+        message: 'What is your github username?',
+    },    
     {
         type: 'input',
         name: 'title',
@@ -48,11 +54,7 @@ const questions = [
         name: 'license',
         choices: ['MIT', 'MPL'],
     },
-    {
-        type: 'input',
-        name: 'username',
-        message: 'What is your github username?',
-    },
+
 ];
 
 const promptUser = () => {
@@ -61,7 +63,10 @@ const promptUser = () => {
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, answers) {
-    fs.writeFile(fileName, answers);
+    fs.writeFile(fileName, answers, err =>{
+        if (err) return console.log("writeToFile error: "+err);
+        else console.log("Successfully writeToFile!")
+    });
 }
 const writeFileAsync = util.promisify(writeToFile);
 
