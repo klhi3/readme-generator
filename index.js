@@ -1,13 +1,85 @@
 // TODO: Include packages needed for this application
+const inquirer = require('inquirer');
+const fs = require('fs');
+const util = require('util');
+const writeFileAsync = util.promisify(fs.writeFile);
+
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // TODO: Create an array of questions for user input
-const questions = [];
+const questions = [ 
+    {
+        type: 'input',
+        name: 'title',
+        message: 'What is your project title?',
+    },
+    {
+        type: 'input',
+        name: 'description',
+        message: 'Please describe your project',
+    },
+    {
+        type: 'input',
+        name: 'installation',
+        message: 'How to install?',
+    },
+    {
+        type: 'input',
+        name: 'usage',
+        message: 'Describe usage?',
+    },
+    {
+        type: 'input',
+        name: 'constribution',
+        message: 'Provide any contribution?',
+    },
+    {
+        type: 'input',
+        name: 'tests',
+        message: 'Tests',
+    },
+    {
+        type: 'input',
+        name: 'questions',
+        message: 'Questions',
+    },
+    {
+        type: 'checkbox',
+        message: 'License for your project?',
+        name: 'license',
+        choices: ['MIT', 'MPL', 'GNU', 'BSL'],
+    },
+    {
+        type: 'input',
+        name: 'username',
+        message: 'What is your github username?',
+    },
+];
+
+const promptUser = () => {
+    return inquirer.prompt(questions);
+};
 
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {}
+function writeToFile(fileName, answers) {
+    fs.writeToFile(fileName, answers);
+
+}
 
 // TODO: Create a function to initialize app
-function init() {}
+function init () {
+    promptUser()
+    .then((answers) => writeFileAsync(fileName, generateMarkdown(answers)))
+    .then(() => console.log("Successfully wrote to "+fileName))
+    .catch((err) => console.error(err)); 
+};
+
 
 // Function call to initialize app
 init();
+
+
+
+
+
+
