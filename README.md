@@ -1,6 +1,6 @@
 # GitHub README.md Generator
    
-Create quickly and easily a professional README.md file for new project in gibhub repository
+Create quickly and easily a professional README.md file for new project in gibhub repository using Javascript, Node.js
 
 ## Features
 
